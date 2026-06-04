@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabinet Dr Journo Joanna</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'DM Sans',sans-serif; background:#FAF6F1; min-height:100vh; color:#2C1F14; }
+.container { max-width:580px; margin:0 auto; padding:40px 20px 80px; }
+.header { text-align:center; margin-bottom:40px; }
+.logo { width:70px; height:70px; background:linear-gradient(135deg,#C9A98A,#A67C5B); border-radius:50%; margin:0 auto 16px; display:flex; align-items:center; justify-content:center; }
+.logo svg { width:36px; height:36px; fill:white; }
+h1 { font-family:'Cormorant Garamond',serif; font-size:26px; color:#6B4C33; margin-bottom:4px; }
+.sub { font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#9B8070; }
+.divider { width:40px; height:2px; background:linear-gradient(90deg,#C9A98A,#A67C5B); margin:14px auto 10px; border-radius:2px; }
+.adresse { font-size:13px; color:#9B8070; line-height:1.8; margin-top:6px; }
+.adresse a { color:#A67C5B; text-decoration:none; font-weight:500; }
+.card { background:white; border-radius:20px; padding:36px 32px; box-shadow:0 4px 24px rgba(166,124,91,0.1); }
+.card-title { font-family:'Cormorant Garamond',serif; font-size:20px; color:#6B4C33; margin-bottom:6px; }
+.card-desc { font-size:14px; color:#6B6B6B; line-height:1.6; margin-bottom:28px; padding-bottom:20px; border-bottom:1px solid #FAF6F1; }
+.field { margin-bottom:20px; }
+.flabel { display:block; font-size:11px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:#A67C5B; margin-bottom:7px; }
+input[type=text], input[type=email], textarea { width:100%; padding:13px 15px; border:1.5px solid #EDE0D0; border-radius:11px; font-family:'DM Sans',sans-serif; font-size:15px; color:#2C1F14; background:#FAF6F1; outline:none; }
+input:focus, textarea:focus { border-color:#C9A98A; background:white; }
+textarea { resize:none; height:85px; }
+.row2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.upload-area { border:2px dashed #EDE0D0; border-radius:14px; padding:28px 16px; text-align:center; background:#FAF6F1; cursor:pointer; position:relative; }
+.upload-area input { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%; }
+.upload-area svg { width:30px; height:30px; stroke:#C9A98A; fill:none; stroke-width:1.5; margin-bottom:8px; display:block; margin-left:auto; margin-right:auto; }
+.utitle { font-size:14px; color:#6B4C33; font-weight:500; }
+.usub { font-size:12px; color:#9B8070; margin-top:4px; }
+.note { font-size:12px; color:#9B8070; background:#F5EDD6; border-left:3px solid #C8A96A; padding:8px 12px; border-radius:0 8px 8px 0; margin-top:8px; }
+.rgpd { display:flex; gap:12px; align-items:flex-start; padding:14px; background:#FAF6F1; border-radius:11px; border:1px solid #EDE0D0; }
+.rgpd input[type=checkbox] { width:17px; height:17px; min-width:17px; accent-color:#A67C5B; margin-top:2px; cursor:pointer; }
+.rgpd span { font-size:12px; color:#6B6B6B; line-height:1.6; }
+.btn { width:100%; padding:15px; margin-top:24px; background:linear-gradient(135deg,#C9A98A,#A67C5B); border:none; border-radius:13px; color:white; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; cursor:pointer; }
+.btn:disabled { opacity:0.7; }
+.footer { text-align:center; margin-top:28px; font-size:11px; color:#C9A98A; letter-spacing:1px; }
+#merci { display:none; text-align:center; padding:40px 20px; }
+.ok-icon { width:68px; height:68px; background:linear-gradient(135deg,#C9A98A,#A67C5B); border-radius:50%; margin:0 auto 20px; display:flex; align-items:center; justify-content:center; }
+.ok-icon svg { width:30px; height:30px; stroke:white; fill:none; stroke-width:2.5; }
+@media(max-width:480px){ .card{padding:24px 18px;} .row2{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 64 64"><path d="M32 4C22 4 14 11 14 20c0 5 1.5 9 3 13l2.5 13C20 49 21.5 51 24 51c2 0 3-1.5 3.5-4L29 38c.5-2 1.5-3 3-3s2.5 1 3 3l1.5 9c.5 2.5 1.5 4 3.5 4 2.5 0 4-2 4.5-5l2.5-13c1.5-4 3-8 3-13C50 11 42 4 32 4z"/></svg>
+    </div>
+    <h1>Dr Journo Joanna</h1>
+    <div class="sub">Cabinet Dentaire &middot; Ermont</div>
+    <div class="divider"></div>
+    <div class="adresse">2 rue de Stalingrad &middot; 95120 Ermont<br><a href="tel:0130722728">01 30 72 27 28</a></div>
+  </div>
+
+  <div class="card">
+    <div id="formulaire">
+      <div class="card-title">Demande de devis</div>
+      <p class="card-desc">Pour finaliser votre dossier, merci de nous transmettre votre tableau de garanties.</p>
+
+      <form id="monForm" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="access_key" value="9179a0b2-b805-4ee2-910b-27dc9ba53e2a">
+        <input type="hidden" name="subject" value="Nouveau tableau de garanties - Cabinet Dr Journo">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="from_name" value="Cabinet Dr Journo">
+
+        <div class="row2">
+          <div class="field">
+            <label class="flabel">Pr&eacute;nom *</label>
+            <input type="text" name="prenom" id="prenom" placeholder="Marie" required>
+          </div>
+          <div class="field">
+            <label class="flabel">Nom *</label>
+            <input type="text" name="nom" id="nom" placeholder="Dupont" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="flabel">Email *</label>
+          <input type="email" name="email" id="email" placeholder="marie.dupont@email.com" required>
+        </div>
+        <div class="field">
+          <label class="flabel">Tableau de garanties *</label>
+          <div class="upload-area">
+            <input type="file" name="attachment" id="fichier" accept=".pdf,.jpg,.jpeg,.png" required>
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <div class="utitle">Cliquez pour uploader votre fichier</div>
+            <div class="usub" id="nomFichier">PDF, JPG, PNG</div>
+          </div>
+          <div class="note">Tableau de garanties fourni par votre mutuelle &mdash; et non votre carte mutuelle.</div>
+        </div>
+        <div class="field">
+          <label class="flabel">Niveau de contrat <span style="font-weight:300;font-size:10px;text-transform:none;letter-spacing:0">(important)</span></label>
+          <textarea name="contrat" id="contrat" placeholder="Ex : SwissLife – Excellence, MGEN – Formule 2…"></textarea>
+        </div>
+        <div class="rgpd">
+          <input type="checkbox" id="rgpd">
+          <span>J'accepte que le cabinet utilise ces informations dans le cadre de la pr&eacute;paration de mon devis, conform&eacute;ment au RGPD.</span>
+        </div>
+        <button type="button" class="btn" id="btnEnvoyer">Envoyer ma demande</button>
+      </form>
+    </div>
+
+    <div id="merci">
+      <div class="ok-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:26px;color:#6B4C33;margin-bottom:10px">Demande envoy&eacute;e !</h2>
+      <p style="font-size:14px;color:#6B6B6B;line-height:1.7">Merci <strong id="prenomMerci"></strong> &#127800;<br><br>Le cabinet du Dr Journo Joanna a bien re&ccedil;u votre demande.<br>Vous serez contact&eacute; dans les meilleurs d&eacute;lais.</p>
+    </div>
+  </div>
+
+  <div class="footer">SELARL DR JOURNO JOANNA &middot; 2 RUE DE STALINGRAD &middot; 95120 ERMONT &middot; 01 30 72 27 28</div>
+</div>
+
+<script>
+document.getElementById('fichier').onchange = function(){
+  if(this.files && this.files[0]){
+    document.getElementById('nomFichier').textContent = '✅ ' + this.files[0].name;
+  }
+};
+
+document.getElementById('btnEnvoyer').onclick = function(){
+  var prenom = document.getElementById('prenom').value.trim();
+  var nom = document.getElementById('nom').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var rgpd = document.getElementById('rgpd').checked;
+  var fichier = document.getElementById('fichier');
+
+  if(!prenom || !nom){ alert('Merci de renseigner votre prénom et nom.'); return; }
+  if(!email){ alert('Merci de renseigner votre email.'); return; }
+  if(!fichier.files || !fichier.files[0]){ alert("Merci d'uploader votre tableau de garanties."); return; }
+  if(!rgpd){ alert("Merci d'accepter la politique de confidentialité."); return; }
+
+  var btn = document.getElementById('btnEnvoyer');
+  btn.textContent = 'Envoi en cours...';
+  btn.disabled = true;
+
+  var formData = new FormData(document.getElementById('monForm'));
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    if(data.success){
+      document.getElementById('prenomMerci').textContent = prenom;
+      document.getElementById('formulaire').style.display = 'none';
+      document.getElementById('merci').style.display = 'block';
+      window.scrollTo({top:0, behavior:'smooth'});
+    } else {
+      btn.textContent = 'Envoyer ma demande';
+      btn.disabled = false;
+      alert('Erreur : ' + data.message);
+    }
+  })
+  .catch(function(){
+    btn.textContent = 'Envoyer ma demande';
+    btn.disabled = false;
+    alert('Erreur réseau. Veuillez réessayer.');
+  });
+};
+</script>
+</body>
+</html>
